@@ -1,0 +1,486 @@
+{
+  "payments_total": 212118.95,
+  "settlements_total": 212118.95,
+  "variance_before": 30.98,
+  "variance_after": 0.0,
+  "reconciled_count": 8154,
+  "unreconciled_payments": 5182,
+  "unreconciled_settlements": 5135,
+  "p_map": {
+    "": -55394.07000000002,
+    "expenses_amazon_fees": -132593.41,
+    "expenses_fba_fees": -0.41,
+    "expenses_promotional_rebates": -11273.53,
+    "refunded_expenses": 216.28,
+    "refunded_sales": -2031.3700000000001,
+    "sales_inventory_reimbursements": 679.6899999999999,
+    "sales_other": 11.61,
+    "sales_product_charges": 335336.96,
+    "sales_shipping": 8294.16,
+    "sales_tax": 13478.970000000001
+  },
+  "s_map": {
+    "expenses_amazon_fees": -132593.41,
+    "expenses_fba_fees": -0.41,
+    "expenses_promotional_rebates": -11273.53,
+    "refunded_expenses": 216.28,
+    "refunded_sales": -2031.3700000000001,
+    "sales_inventory_reimbursements": 679.6899999999999,
+    "sales_other": 11.61,
+    "sales_product_charges": 335336.96,
+    "sales_shipping": 8294.16,
+    "sales_tax": 13478.970000000001
+  },
+  "sample_records": [
+    {
+      "record_ref": "249-3364825-5895055+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-3364825-5895055",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": 19.67,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-3364825-5895055+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-3364825-5895055",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-3364825-5895055+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-3364825-5895055",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": -1.97,
+      "summary_field": "expenses_promotional_rebates",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "503-8743745-3060622+BIO-S956138845_AU+17.07.2026",
+      "order_id": "503-8743745-3060622",
+      "sku": "BIO-S956138845_AU",
+      "raw_type": "Order",
+      "amount": 26.39,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "503-8743745-3060622+BIO-S956138845_AU+17.07.2026",
+      "order_id": "503-8743745-3060622",
+      "sku": "BIO-S956138845_AU",
+      "raw_type": "Order",
+      "amount": -7.76,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-4610248-0034261+BIO-S956138845_AU+17.07.2026",
+      "order_id": "249-4610248-0034261",
+      "sku": "BIO-S956138845_AU",
+      "raw_type": "Order",
+      "amount": 26.39,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-4610248-0034261+BIO-S956138845_AU+17.07.2026",
+      "order_id": "249-4610248-0034261",
+      "sku": "BIO-S956138845_AU",
+      "raw_type": "Order",
+      "amount": -7.76,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-4521769-3864654+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-4521769-3864654",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": 19.67,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-4521769-3864654+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-4521769-3864654",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-9761378-9663042+BDPRM004WAEN1A+17.07.2026",
+      "order_id": "249-9761378-9663042",
+      "sku": "BDPRM004WAEN1A",
+      "raw_type": "Order",
+      "amount": 21.62,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-9761378-9663042+BDPRM004WAEN1A+17.07.2026",
+      "order_id": "249-9761378-9663042",
+      "sku": "BDPRM004WAEN1A",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-5009225-1030234+BDPRM004WAEN1A+17.07.2026",
+      "order_id": "249-5009225-1030234",
+      "sku": "BDPRM004WAEN1A",
+      "raw_type": "Order",
+      "amount": 21.62,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-5009225-1030234+BDPRM004WAEN1A+17.07.2026",
+      "order_id": "249-5009225-1030234",
+      "sku": "BDPRM004WAEN1A",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-1280553-7667819+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-1280553-7667819",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": 19.67,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-1280553-7667819+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-1280553-7667819",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-3301882-2239821+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-3301882-2239821",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": 19.67,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-3301882-2239821+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-3301882-2239821",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-8848097-0781452+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-8848097-0781452",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": 19.67,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-8848097-0781452+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-8848097-0781452",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "250-0945643-0015030+BIO-S000004485_AUS+17.07.2026",
+      "order_id": "250-0945643-0015030",
+      "sku": "BIO-S000004485_AUS",
+      "raw_type": "Order",
+      "amount": 22.47,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "250-0945643-0015030+BIO-S000004485_AUS+17.07.2026",
+      "order_id": "250-0945643-0015030",
+      "sku": "BIO-S000004485_AUS",
+      "raw_type": "Order",
+      "amount": -7.76,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "503-0131404-4871858+BDPRM004WAEN1A+17.07.2026",
+      "order_id": "503-0131404-4871858",
+      "sku": "BDPRM004WAEN1A",
+      "raw_type": "Order",
+      "amount": 21.62,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "503-0131404-4871858+BDPRM004WAEN1A+17.07.2026",
+      "order_id": "503-0131404-4871858",
+      "sku": "BDPRM004WAEN1A",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-5058441-7243019+BIO-S000004224_AU+17.07.2026",
+      "order_id": "249-5058441-7243019",
+      "sku": "BIO-S000004224_AU",
+      "raw_type": "Order",
+      "amount": 24.79,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-5058441-7243019+BIO-S000004224_AU+17.07.2026",
+      "order_id": "249-5058441-7243019",
+      "sku": "BIO-S000004224_AU",
+      "raw_type": "Order",
+      "amount": -7.76,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-9038390-5726224+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-9038390-5726224",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": 19.67,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-9038390-5726224+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-9038390-5726224",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-9038390-5726224+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-9038390-5726224",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": -1.97,
+      "summary_field": "expenses_promotional_rebates",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "250-2669482-9400657+BIO-S000004221_AU+17.07.2026",
+      "order_id": "250-2669482-9400657",
+      "sku": "BIO-S000004221_AU",
+      "raw_type": "Order",
+      "amount": 22.94,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "250-2669482-9400657+BIO-S000004221_AU+17.07.2026",
+      "order_id": "250-2669482-9400657",
+      "sku": "BIO-S000004221_AU",
+      "raw_type": "Order",
+      "amount": -5.79,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "250-2669482-9400657+BDPRM004WAEN1A+17.07.2026",
+      "order_id": "250-2669482-9400657",
+      "sku": "BDPRM004WAEN1A",
+      "raw_type": "Order",
+      "amount": 21.62,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "250-2669482-9400657+BDPRM004WAEN1A+17.07.2026",
+      "order_id": "250-2669482-9400657",
+      "sku": "BDPRM004WAEN1A",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-9838533-7986266+BIO-S000004485_AUS+17.07.2026",
+      "order_id": "249-9838533-7986266",
+      "sku": "BIO-S000004485_AUS",
+      "raw_type": "Order",
+      "amount": 22.47,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-9838533-7986266+BIO-S000004485_AUS+17.07.2026",
+      "order_id": "249-9838533-7986266",
+      "sku": "BIO-S000004485_AUS",
+      "raw_type": "Order",
+      "amount": -7.76,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-9838533-7986266+BDPRM004WAEN1A+17.07.2026",
+      "order_id": "249-9838533-7986266",
+      "sku": "BDPRM004WAEN1A",
+      "raw_type": "Order",
+      "amount": 21.62,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-9838533-7986266+BDPRM004WAEN1A+17.07.2026",
+      "order_id": "249-9838533-7986266",
+      "sku": "BDPRM004WAEN1A",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "250-0612860-6064664+BIO-S000004059_AU+17.07.2026",
+      "order_id": "250-0612860-6064664",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": 19.67,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "250-0612860-6064664+BIO-S000004059_AU+17.07.2026",
+      "order_id": "250-0612860-6064664",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "250-0612860-6064664+BIO-S000004059_AU+17.07.2026",
+      "order_id": "250-0612860-6064664",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": -1.97,
+      "summary_field": "expenses_promotional_rebates",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-1281140-6371037+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-1281140-6371037",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": 19.67,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-1281140-6371037+BIO-S000004059_AU+17.07.2026",
+      "order_id": "249-1281140-6371037",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "503-3702697-8223018+BIO-S000004059_AU+17.07.2026",
+      "order_id": "503-3702697-8223018",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": 19.67,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "503-3702697-8223018+BIO-S000004059_AU+17.07.2026",
+      "order_id": "503-3702697-8223018",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "250-6133194-9007037+BIO-S000004059_AU+17.07.2026",
+      "order_id": "250-6133194-9007037",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": 19.67,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "250-6133194-9007037+BIO-S000004059_AU+17.07.2026",
+      "order_id": "250-6133194-9007037",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "250-6916679-1809457+BIO-S000004059_AU+17.07.2026",
+      "order_id": "250-6916679-1809457",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": 19.67,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "250-6916679-1809457+BIO-S000004059_AU+17.07.2026",
+      "order_id": "250-6916679-1809457",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-2540493-4148609+BDPRM004WAEN1A+17.07.2026",
+      "order_id": "249-2540493-4148609",
+      "sku": "BDPRM004WAEN1A",
+      "raw_type": "Order",
+      "amount": 21.62,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "249-2540493-4148609+BDPRM004WAEN1A+17.07.2026",
+      "order_id": "249-2540493-4148609",
+      "sku": "BDPRM004WAEN1A",
+      "raw_type": "Order",
+      "amount": -6.17,
+      "summary_field": "expenses_amazon_fees",
+      "source_file": "AMAZON_SETTLEMENTS"
+    },
+    {
+      "record_ref": "503-3757611-2628613+BIO-S000004059_AU+17.07.2026",
+      "order_id": "503-3757611-2628613",
+      "sku": "BIO-S000004059_AU",
+      "raw_type": "Order",
+      "amount": 39.34,
+      "summary_field": "sales_product_charges",
+      "source_file": "AMAZON_SETTLEMENTS"
+    }
+  ]
+}
