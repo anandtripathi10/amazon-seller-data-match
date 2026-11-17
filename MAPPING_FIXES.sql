@@ -163,7 +163,7 @@ WHERE transaction_type = 'ORDER'
 -- Fix: Unify record_ref templates so records join smoothly.
 UPDATE payment_mapping_configs
 SET record_ref = 'txn_ref+AWD_STORAGE_FEE+settlement_id+date',
-    notes = 'Fixed: Harmonized AWD_STORAGE_FEES to singular AWD_STORAGE_FEE'
+    notes = 'Fixed: Standardized AWD_STORAGE_FEES to singular AWD_STORAGE_FEE'
 WHERE record_ref LIKE '%AWD_STORAGE_FEES%';
 
 -- ----------------------------------------------------------------------------

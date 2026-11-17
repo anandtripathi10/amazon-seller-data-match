@@ -1,10 +1,10 @@
-# Amazon Seller Data Match — Payments vs Settlement Financial Reconciliation Engine
+# Amazon Seller Data Match — Payments vs Settlement Reconciliation
 
-A production-grade, config-driven financial reconciliation engine that ingests Amazon's **Payments report** (horizontal CSV) and **Settlement report** (vertical flat TSV) for payout batch `12395580393`, matches records across disparate granularities using dynamic join keys (`record_ref`), identifies subtle mapping defects in production configs, and generates CFO-ready dual-sheet accounting reports that tie out 100% to Amazon's reported payout ($212,118.95 with **$0.00 variance**).
+A config-driven financial reconciliation pipeline that ingests Amazon's **Payments report** (horizontal CSV) and **Settlement report** (vertical tab-delimited TXT) for payout batch `12395580393`, matches records across differing granularities using dynamic join keys (`record_ref`), resolves configuration mapping bugs via SQL, and generates dual-sheet Excel accounting reports tying out to Amazon's reported payout ($212,118.95 with **$0.00 net variance**).
 
 ---
 
-## 🚀 Quick Start (Running End-to-End)
+## Quick Start
 
 ### Prerequisites
 - Python 3.9+
@@ -16,7 +16,7 @@ A production-grade, config-driven financial reconciliation engine that ingests A
 git clone https://github.com/anandtripathi10/amazon-seller-data-match.git
 cd amazon-seller-data-match
 
-# 2. Activate virtual environment (or create one)
+# 2. Set up virtual environment and install dependencies
 python3 -m venv .venv
 source .venv/bin/activate
 pip install openpyxl
@@ -25,33 +25,33 @@ pip install openpyxl
 python main.py
 ```
 
-### What this single command executes:
-1. **Config Ingestion**: Loads payment and settlement mapping configs into database tables.
-2. **Raw File Ingestion**: Ingests 23,026 payments rows and 54,980 settlement rows into a **single unified table** (`unified_transactions`), preserving raw JSON payloads, source line numbers, and file origin.
+### Pipeline Stages
+1. **Config Ingestion**: Loads payment and settlement mapping configs into database tables (`payment_mapping_configs`, `settlement_mapping_configs`).
+2. **Raw File Ingestion**: Ingests 23,026 payments rows and 54,980 settlement rows into a single unified table (`unified_transactions`), preserving raw JSON payloads, source line numbers, and file origin.
 3. **Baseline Reconciliation (Before Fixes)**: Computes initial accounting summary and generates `output/report_before_fixes.xlsx`.
-4. **Automated Defect Correction**: Executes `MAPPING_FIXES.sql` against the database config tables to resolve mapping bugs.
-5. **Re-evaluation & Verification**: Re-evaluates transactions and generates final `output/report_after_fixes.xlsx` with **$0.00 variance**.
+4. **Mapping Config Updates**: Applies `MAPPING_FIXES.sql` against the database config tables to resolve mapping bugs.
+5. **Re-evaluation & Report Generation**: Re-evaluates transactions and generates `output/report_after_fixes.xlsx` with **$0.00 net variance**.
 6. **PostgreSQL Dump Export**: Generates `output/db_dump.sql` (compatible with PostgreSQL 14+).
 
 ---
 
-## 📊 Deliverables & Output Files
+## Deliverables & Output Files
 
 | File | Purpose | Key Result |
 | :--- | :--- | :--- |
 | `output/report_before_fixes.xlsx` | Baseline Excel Report | Initial delta: **$30.98** |
-| `output/report_after_fixes.xlsx` | Final Reconciled Excel Report | Final delta: **$0.00 (100% Tie-out)** |
-| `MAPPING_FIXES.sql` | SQL Config Updates | 7 documented fixes with root cause analysis |
-| `output/db_dump.sql` | PostgreSQL Dump | Unified table schema + representative sample data |
-| `ui/index.html` | Interactive Dashboard | Visual explorer of steps, diffs, and sample records |
-| `PROGRESS.md` | Investigation Progress Log | Step-by-step audit of how variances were isolated |
+| `output/report_after_fixes.xlsx` | Final Reconciled Excel Report | Final delta: **$0.00 (Exact Tie-out)** |
+| `MAPPING_FIXES.sql` | SQL Config Updates | 7 documented SQL fixes with root cause notes |
+| `output/db_dump.sql` | PostgreSQL Dump | Unified table schema + ingested records |
+| `ui/index.html` | Local Report Viewer | Browser viewer for summary diffs and sample records |
+| `PROGRESS.md` | Investigation Log | Step-by-step notes on how each variance was isolated |
 
 ---
 
-## 🏗️ Database Schema Design
+## Database Schema Design
 
 ### Unified Single-Table Architecture (`unified_transactions`)
-To ensure complete auditable traceability across disparate datasets without data silos, all source transactions are stored in a single `unified_transactions` table:
+Both source files are ingested into a single `unified_transactions` table with a `source_file` discriminator so reconciliation queries operate over one consistent schema without joining separate transaction tables:
 
 ```sql
 CREATE TABLE unified_transactions (
@@ -79,14 +79,14 @@ CREATE TABLE unified_transactions (
 );
 ```
 
-### Why this schema?
-1. **Auditability**: Every dollar in the Excel report traces back to its exact source file, line number, and raw JSON payload.
-2. **Uniform Join Keys**: Both file sources populate `record_ref`, allowing unified SQL queries for reconciliation.
-3. **Database-Driven Configs**: Mapping configs reside in `payment_mapping_configs` and `settlement_mapping_configs`. Fixes are applied strictly through SQL data updates without hardcoding adjustments into report generation code.
+### Design Rationale
+1. **Auditability**: Every figure in the Excel report traces back to its source file, line number, and raw JSON row.
+2. **Uniform Join Keys**: Both sources populate `record_ref` using the config template, handling 1:N and N:1 granularity differences directly in SQL/grouping logic.
+3. **Database-Driven Configs**: Mapping rules live in `payment_mapping_configs` and `settlement_mapping_configs`. All fixes are applied strictly via SQL updates without hardcoded adjustments in code.
 
 ---
 
-## 📈 Key Metrics & Run Output
+## Key Metrics & Run Output
 
 - **Amazon Reported Target Payout**: `$212,118.95`
 - **Settlement Report Sum**: `$212,118.95`
@@ -99,7 +99,7 @@ CREATE TABLE unified_transactions (
 
 ---
 
-## 🔍 Assumptions Made
+## Assumptions Made
 1. **Settlement Period Scope**: The settlement file exclusively covers batch `12395580393`. The Payments CSV includes prior/subsequent batches and deferred transactions; only transactions released within batch `12395580393` contribute to this period's payout.
-2. **Horizontal vs Vertical Representation**: In Payments, `total` is a row sum of columns, not an independent transaction. Component columns (`product_sales`, `selling_fees`, `fba_fees`) route to accounting buckets, while `total` serves solely for row-level auditing.
-3. **Tax Aggregation**: Payments aggregates sales tax into a single column (`sales tax collected`), whereas Settlements provides granular lines (`Tax`, `ShippingTax`, `TaxDiscount`). Both aggregate cleanly to the exact cent ($13,478.97 net).
+2. **Horizontal vs Vertical Representation**: In Payments, `total` is a row sum of columns rather than an independent charge. Component columns (`product_sales`, `selling_fees`, `fba_fees`, etc.) route to accounting buckets, while `total` is kept only for row-level verification.
+3. **Tax Aggregation**: Payments aggregates sales tax into a single column (`sales tax collected`), whereas Settlements splits it into granular lines (`Tax`, `ShippingTax`, `TaxDiscount`, `LowValueGoodsTax`, `GiftWrapTax`). Routing all tax components to `sales_tax` reconciles both sources cleanly ($13,478.97 net).
