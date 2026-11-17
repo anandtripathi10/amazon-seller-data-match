@@ -1,4 +1,4 @@
-# PortOne SDE II Assignment — Amazon Payments vs Settlement Reconciliation
+# Amazon Seller Data Match — Payments vs Settlement Financial Reconciliation Engine
 
 A production-grade, config-driven financial reconciliation engine that ingests Amazon's **Payments report** (horizontal CSV) and **Settlement report** (vertical flat TSV) for payout batch `12395580393`, matches records across disparate granularities using dynamic join keys (`record_ref`), identifies subtle mapping defects in production configs, and generates CFO-ready dual-sheet accounting reports that tie out 100% to Amazon's reported payout ($212,118.95 with **$0.00 variance**).
 
@@ -13,9 +13,11 @@ A production-grade, config-driven financial reconciliation engine that ingests A
 ### Setup & Run
 ```bash
 # 1. Clone repository and navigate to directory
-cd /Users/anandtripathi/hustle/projects/portone-amazon-recon
+git clone https://github.com/anandtripathi10/amazon-seller-data-match.git
+cd amazon-seller-data-match
 
 # 2. Activate virtual environment (or create one)
+python3 -m venv .venv
 source .venv/bin/activate
 pip install openpyxl
 
@@ -48,8 +50,8 @@ python main.py
 
 ## 🏗️ Database Schema Design
 
-### Mandatory Single-Table Architecture (`unified_transactions`)
-Per assignment requirements (*"Important :: Ingest both the files in a single table, not in two different tables"*), all source transactions are stored in `unified_transactions`:
+### Unified Single-Table Architecture (`unified_transactions`)
+To ensure complete auditable traceability across disparate datasets without data silos, all source transactions are stored in a single `unified_transactions` table:
 
 ```sql
 CREATE TABLE unified_transactions (

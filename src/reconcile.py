@@ -1,5 +1,5 @@
 """
-Reconciliation Engine for PortOne Amazon Reconciliation.
+Reconciliation Engine for Amazon Reconciliation.
 Matches records across Payments (DS1) and Settlements (DS2) on shared record_ref,
 handles granularity mismatches (1:N, N:1), and compiles Accounting Summary.
 """

@@ -1,5 +1,5 @@
 """
-Main CLI Pipeline for PortOne Amazon Reconciliation.
+Main CLI Pipeline for Amazon Reconciliation.
 Orchestrates: Ingest -> Baseline Recon -> Report Before Fixes -> Apply MAPPING_FIXES.sql -> Report After Fixes -> Export Postgres Dump.
 """
 
@@ -135,8 +135,7 @@ def export_postgres_dump(db: Database, output_path: str):
     cur = db.conn.cursor()
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write("-- =========================================================\n")
-        f.write("-- PortOne SDE II Assignment: PostgreSQL Database Dump\n")
-        f.write("-- Target: Amazon Payments vs Settlement Reconciliation\n")
+        f.write("-- Amazon Payments vs Settlement Reconciliation: PostgreSQL Database Dump\n")
         f.write("-- =========================================================\n\n")
         f.write(POSTGRES_SCHEMA_SQL)
         f.write("\n\n-- Ingested Configs and Data Samples\n")

@@ -1,5 +1,5 @@
 """
-Unified Database Schema and Storage for PortOne Amazon Reconciliation.
+Unified Database Schema and Storage for Amazon Reconciliation.
 Supports local SQLite execution and generates standard PostgreSQL DDL / pg_dump.
 """
 
@@ -18,7 +18,7 @@ sqlite3.register_adapter(Decimal, adapt_decimal)
 sqlite3.register_converter("DECIMAL", convert_decimal)
 
 POSTGRES_SCHEMA_SQL = """
--- PostgreSQL Schema for PortOne Amazon Payments vs Settlement Reconciliation
+-- PostgreSQL Schema for Amazon Payments vs Settlement Reconciliation
 -- Requirement: Ingest both files in a single unified table.
 
 DROP TABLE IF EXISTS unified_transactions CASCADE;

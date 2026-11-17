@@ -1,5 +1,5 @@
 """
-Excel Report Generator for PortOne Amazon Reconciliation.
+Excel Report Generator for Amazon Reconciliation.
 Generates an accounting-grade .xlsx file matching amazon_sample_output_report.xlsx layout:
   - Sheet 1: Summary
   - Sheet 2: Consolidated Data

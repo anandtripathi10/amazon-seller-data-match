@@ -1,10 +1,9 @@
 -- =========================================================
--- PortOne SDE II Assignment: PostgreSQL Database Dump
--- Target: Amazon Payments vs Settlement Reconciliation
+-- Amazon Payments vs Settlement Reconciliation: PostgreSQL Database Dump
 -- =========================================================
 
 
--- PostgreSQL Schema for PortOne Amazon Payments vs Settlement Reconciliation
+-- PostgreSQL Schema for Amazon Payments vs Settlement Reconciliation
 -- Requirement: Ingest both files in a single unified table.
 
 DROP TABLE IF EXISTS unified_transactions CASCADE;

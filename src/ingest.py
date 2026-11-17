@@ -1,5 +1,5 @@
 """
-Ingestion Pipeline for PortOne Amazon Reconciliation.
+Ingestion Pipeline for Amazon Reconciliation.
 Ingests both Amazon Payments CSV and Amazon Settlement TXT into a single unified table.
 Retains source audit trails and computes running summary during ingestion.
 """

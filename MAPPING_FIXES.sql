@@ -1,5 +1,5 @@
 -- ============================================================================
--- PortOne SDE II Assignment: Amazon Payments vs Settlement Reconciliation
+-- Amazon Payments vs Settlement Reconciliation
 -- MAPPING_FIXES.sql
 -- ============================================================================
 -- This script contains the precise SQL updates required to correct genuine

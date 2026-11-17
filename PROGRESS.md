@@ -1,6 +1,6 @@
 # Investigation Progress Log (PROGRESS.md)
 
-*PortOne SDE II Assignment: Amazon Payments vs Settlement Reconciliation*
+*Amazon Payments vs Settlement Reconciliation Engine*
 
 ---
 
